@@ -9,6 +9,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import Status from './src/components/Status';
 import FriendProfile from './src/components/FriendProfile';
 import EditProfile from './src/components/EditProfile';
+import Ionic from 'react-native-vector-icons/Ionicons';
 
 function App() {
   const Stack = createNativeStackNavigator();
@@ -17,12 +18,27 @@ function App() {
   const BottomTabScreen = () => {
     return (
       <Tab.Navigator
-        screenOptions={() => ({
+        screenOptions={({route}) => ({
           tabBarHideOnKeyboard: true,
           tabBarShowLabel: false,
           headerShown: false,
           tabBarStyle: {
             height: 70,
+          },
+          // eslint-disable-next-line react/no-unstable-nested-components
+          tabBarIcon: ({focused, size, color}) => {
+            let iconName;
+            if (route.name === 'Home') {
+              iconName = focused ? 'home-sharp' : 'home-outline';
+            } else if (route.name === 'Search') {
+              iconName = focused ? 'search' : 'search-outline';
+            } else if (route.name === 'Activity') {
+              iconName = focused ? 'heart' : 'heart-outline';
+            } else if (route.name === 'Profile') {
+              iconName = focused ? 'person-circle' : 'person-outline';
+            }
+
+            return <Ionic name={iconName} size={size} color={color} />;
           },
         })}>
         <Tab.Screen name="Home" component={Home} />
