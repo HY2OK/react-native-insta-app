@@ -1,14 +1,14 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import Home from './src/components/Home';
-import Search from './src/components/Search';
-import Activity from './src/components/Activity';
-import Profile from './src/components/Profile';
+import Home from './src/screens/Home';
+import Search from './src/screens/Search';
+import Activity from './src/screens/Activity';
+import Profile from './src/screens/Profile';
 import {NavigationContainer} from '@react-navigation/native';
-import Status from './src/components/Status';
-import FriendProfile from './src/components/FriendProfile';
-import EditProfile from './src/components/EditProfile';
+import Status from './src/screens/Status';
+import FriendProfile from './src/screens/FriendProfile';
+import EditProfile from './src/screens/EditProfile';
 import Ionic from 'react-native-vector-icons/Ionicons';
 
 function App() {
