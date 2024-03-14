@@ -3,6 +3,7 @@ import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
+import Stories from '../components/Stories';
 
 const Home = () => {
   return (
@@ -33,6 +34,7 @@ const Home = () => {
       </View>
       <ScrollView>
         {/* Stories */}
+        <Stories />
         {/* Posts */}
       </ScrollView>
     </SafeAreaView>
