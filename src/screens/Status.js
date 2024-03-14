@@ -30,6 +30,7 @@ const Status = ({route, navigation}) => {
       duration: 5000,
       useNativeDriver: false,
     }).start();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -37,6 +38,7 @@ const Status = ({route, navigation}) => {
       navigation.goBack();
     }, 5000);
     return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
