@@ -31,7 +31,6 @@ const Activity = () => {
         {FriendsProfileData.slice(6, 12).map((data, index) => (
           <ActivityRecommend data={data} key={index} />
         ))}
-        <ActivityRecommend />
       </ScrollView>
     </SafeAreaView>
   );

@@ -63,6 +63,15 @@ export const FriendsProfileData = [
     follow: false,
   },
   {
+    name: 'expressjs',
+    accountName: 'ExpressJS',
+    profileImage: require('../../assets/images/post5.jpeg'),
+    posts: 234,
+    followers: '763k',
+    following: 332,
+    follow: false,
+  },
+  {
     name: 'java',
     accountName: 'Java',
     profileImage: require('../../assets/images/post6.jpeg'),
