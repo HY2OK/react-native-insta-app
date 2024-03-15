@@ -27,13 +27,13 @@ const PostItem = ({data}) => {
             style={{width: 40, height: 40, borderRadius: 20}}
           />
           <View style={{paddingLeft: 5}}>
-            <Text style={{fontsize: 15, fontWeight: 'bold'}}>
+            <Text style={{fontSize: 15, fontWeight: 'bold'}}>
               {data.postTitle}
             </Text>
           </View>
         </View>
 
-        <Feather name="more-vertical" style={{fontsize: 20}} />
+        <Feather name="more-vertical" style={{fontSize: 20}} />
       </View>
 
       <View style={{justifyContent: 'center', alignItems: 'center'}}>
@@ -69,7 +69,7 @@ const PostItem = ({data}) => {
             <Feather name="navigation" style={{fontSize: 20}} />
           </TouchableOpacity>
         </View>
-        <Feather name="bookmark" style={{fontsize: 20}} />
+        <Feather name="bookmark" style={{fontSize: 20}} />
       </View>
 
       <View style={{paddingHorizontal: 15}}>
