@@ -2,6 +2,7 @@ import {View, Text} from 'react-native';
 import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import ProfileBody from '../components/ProfileBody';
+import ProfileButton from '../components/ProfileButton';
 
 const Profile = () => {
   return (
@@ -16,6 +17,12 @@ const Profile = () => {
           post="458"
         />
       </View>
+      <ProfileButton
+        id={0}
+        name="jun"
+        accountName="Jun"
+        profileImage={require('../../assets/images/userProfile.jpeg')}
+      />
     </SafeAreaView>
   );
 };
