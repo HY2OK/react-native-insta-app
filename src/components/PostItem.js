@@ -1,34 +1,57 @@
-import {View, Text, Image, TouchableOpacity, TextInput} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  TextInput,
+  Platform,
+} from 'react-native';
 import React, {useState} from 'react';
 import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionic from 'react-native-vector-icons/Ionicons';
 import PushNotification from 'react-native-push-notification';
+import PushNotificationIOS from '@react-native-community/push-notification-ios';
 
 const PostItem = ({data}) => {
   const [like, setLike] = useState(data.isLiked);
 
   const handleNotification = title => {
-    PushNotification.getChannels(function (channel_ids) {
-      console.log(channel_ids);
-    });
+    if (Platform.OS === 'ios') {
+      // PushNotificationIOS.addNotificationRequest({
+      //   id: title,
+      //   title: `${title}을 클릭했습니다.`,
+      //   body: '메시지 입니다.',
+      // });
 
-    PushNotification.cancelAllLocalNotifications();
+      PushNotificationIOS.addNotificationRequest({
+        id: title,
+        title: `${title}을 클릭했습니다.`,
+        body: '메시지 입니다.',
+        fireDate: new Date(Date.now() + 1 * 1000),
+      });
+    } else {
+      // PushNotification.getChannels(function (channel_ids) {
+      //   console.log(channel_ids);
+      // });
 
-    PushNotification.localNotification({
-      channelId: 'insta-channel',
-      title: `${title}을 클릭했습니다`,
-      message: '메시지 입니다.',
-    });
+      PushNotification.cancelAllLocalNotifications();
 
-    // PushNotification.localNotificationSchedule({
-    //   channelId: 'insta-channel',
-    //   title: `${title}을 클릭했습니다`,
-    //   message: '메시지 입니다.',
-    //   color: 'black',
-    //   data: new Date(Date.now() + 1 * 1000),
-    //   allowWhileIdle: true,
-    // });
+      PushNotification.localNotification({
+        channelId: 'insta-channel',
+        title: `${title}을 클릭했습니다`,
+        message: '메시지 입니다.',
+      });
+
+      // PushNotification.localNotificationSchedule({
+      //   channelId: 'insta-channel',
+      //   title: `${title}을 클릭했습니다`,
+      //   message: '메시지 입니다.',
+      //   color: 'black',
+      //   data: new Date(Date.now() + 1 * 1000),
+      //   allowWhileIdle: true,
+      // });
+    }
   };
 
   return (
